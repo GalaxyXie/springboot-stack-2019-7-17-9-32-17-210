@@ -9,4 +9,5 @@ public interface CriminalCaseRepository extends JpaRepository<CriminalCase,Integ
     CriminalCase findCriminalCaseById(int id);
     List<CriminalCase> findAllByOrderByDateDesc();
     List<CriminalCase> findCriminalCasesByName(String name);
+
 }

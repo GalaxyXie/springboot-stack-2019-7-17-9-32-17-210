@@ -59,4 +59,16 @@ public class CriminalCaseTest {
 
         Assertions.assertEquals(2,size);
     }
+    @Test
+    public void should_return_criminal_case_List_size_when_delete_criminal_case_by_Id(){
+        CriminalCase case1=new CriminalCase("JerryKilledJaylon",Long.valueOf("1970010123230000"));
+        CriminalCase case2=new CriminalCase("JerryKilledJaylon",Long.valueOf("1971010123230000"));
+        criminalCaseRepository.save(case1);
+        criminalCaseRepository.save(case2);
+        criminalCaseRepository.deleteById(1);
+        int size=criminalCaseRepository.findAll().size();
+
+        Assertions.assertEquals(1,size);
+    }
+
 }
