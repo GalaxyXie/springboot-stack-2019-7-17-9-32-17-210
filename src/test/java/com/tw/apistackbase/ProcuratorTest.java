@@ -1,8 +1,8 @@
 package com.tw.apistackbase;
 
-import com.tw.apistackbase.Repository.CriminalCaseInfoRepository;
+import com.tw.apistackbase.Repository.ProcuratorRepository;
 import com.tw.apistackbase.Repository.ProcuratorateRepository;
-import com.tw.apistackbase.model.CriminalCaseInfo;
+import com.tw.apistackbase.model.Procurator;
 import com.tw.apistackbase.model.Procuratorate;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -15,16 +15,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 @AutoConfigureMockMvc
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class ProcuratorateTest {
+public class ProcuratorTest {
     @Autowired
-    ProcuratorateRepository procuratorateRepository;
+    ProcuratorRepository procuratorRepository;
     @Test
     public void should_return_Procurate_when_find_Procurate_by_Id(){
-        Procuratorate procuratorate = new Procuratorate("Laura");
-        Procuratorate procuratorate1 = new Procuratorate("amy");
-        procuratorateRepository.save(procuratorate);
-        procuratorateRepository.save(procuratorate1);
-        Procuratorate procuratorate2=procuratorateRepository.findProcuratorateById(1);
-        Assertions.assertEquals("Laura",procuratorate.getName());
+        Procurator Procurator = new Procurator("Laura");
+        Procurator Procurator1 = new Procurator("amy");
+        procuratorRepository.save(Procurator);
+       procuratorRepository.save(Procurator1);
+        Procurator Procurator2=procuratorRepository.findProcuratorateById(1);
+        Assertions.assertEquals("Laura",Procurator2.getName());
     }
 }

@@ -2,10 +2,7 @@ package com.tw.apistackbase.model;
 
 import org.hibernate.annotations.Columns;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class CriminalCase {
@@ -16,6 +13,8 @@ public class CriminalCase {
     private String name;
     @Column(name="criminal_date",nullable = false)
     private long date;
+    @OneToOne
+    private CriminalCaseInfo criminalCaseInfo;
     public  CriminalCase(){}
     public int getId() {
         return id;

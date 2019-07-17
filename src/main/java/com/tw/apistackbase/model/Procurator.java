@@ -1,29 +1,19 @@
 package com.tw.apistackbase.model;
 
-import javax.persistence.*;
-import java.util.List;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 @Entity
-public class Procuratorate {
+public class Procurator {
     @Id
     @GeneratedValue
     private int id;
     @Column(name="procuratorate_name",nullable = false,unique = true)
     private String name;
+    public Procurator(){}
 
-    public List<Procurator> getProcurator() {
-        return procurator;
-    }
-
-    public void setProcurator(List<Procurator> procurator) {
-        this.procurator = procurator;
-    }
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Procurator> procurator;
-    public Procuratorate(){}
-
-    public Procuratorate(String name) {
+    public Procurator(String name) {
         this.name = name;
     }
 
