@@ -31,11 +31,22 @@ public class CriminalCaseTest {
     }
     @Test
     public void should_return_a_criminal_case_when_find_criminal_case_by_Id(){
-        CriminalCase case1=new CriminalCase("JerryKilledJaylon",Long.valueOf("1970010123230000"));
+        CriminalCase case1=new CriminalCase("JerryKilledJaylon",Long.valueOf("1971010123230000"));
         CriminalCase case2=new CriminalCase("JerryKilledSean",Long.valueOf("1970010123230000"));
         criminalCaseRepository.save(case1);
         criminalCaseRepository.save(case2);
         CriminalCase criminalCase=criminalCaseRepository.findCriminalCaseById(1);
         Assertions.assertEquals("JerryKilledJaylon",criminalCase.getName());
+    }
+    @Test
+    public void should_return_a_criminal_case_List_when_find_criminal_case_by_Id(){
+        CriminalCase case1=new CriminalCase("JerryKilledJaylon",Long.valueOf("1970010123230000"));
+        CriminalCase case2=new CriminalCase("JerryKilledSean",Long.valueOf("1971010123230000"));
+        criminalCaseRepository.save(case1);
+        criminalCaseRepository.save(case2);
+        List<CriminalCase> criminalCases=criminalCaseRepository.findAllByOrderByDateDesc();
+
+        Assertions.assertEquals("JerryKilledSean",criminalCases.get(0).getName());
+        Assertions.assertEquals("JerryKilledJaylon",criminalCases.get(1).getName());
     }
 }
