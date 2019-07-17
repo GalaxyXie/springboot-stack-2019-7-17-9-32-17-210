@@ -14,7 +14,41 @@ public class CriminalCase {
     @Column(name="criminal_date",nullable = false)
     private long date;
     @OneToOne
+    @Column(name="criminalInfo",nullable = false)
     private CriminalCaseInfo criminalCaseInfo;
+
+    public CriminalCase(String name, long date, CriminalCaseInfo criminalCaseInfo, Procuratorate procuratorate) {
+        this.name = name;
+        this.date = date;
+        this.criminalCaseInfo = criminalCaseInfo;
+        this.procuratorate = procuratorate;
+    }
+
+    public CriminalCaseInfo getCriminalCaseInfo() {
+        return criminalCaseInfo;
+    }
+
+    public void setCriminalCaseInfo(CriminalCaseInfo criminalCaseInfo) {
+        this.criminalCaseInfo = criminalCaseInfo;
+    }
+
+    public Procuratorate getProcuratorate() {
+        return procuratorate;
+    }
+
+    public void setProcuratorate(Procuratorate procuratorate) {
+        this.procuratorate = procuratorate;
+    }
+
+    @OneToOne
+    private Procuratorate procuratorate;
+
+    public CriminalCase(String name, long date, CriminalCaseInfo criminalCaseInfo) {
+        this.name = name;
+        this.date = date;
+        this.criminalCaseInfo = criminalCaseInfo;
+    }
+
     public  CriminalCase(){}
     public int getId() {
         return id;

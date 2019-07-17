@@ -15,6 +15,11 @@ public class Procuratorate {
         return procurator;
     }
 
+    public Procuratorate(String name, List<Procurator> procurator) {
+        this.name = name;
+        this.procurator = procurator;
+    }
+
     public void setProcurator(List<Procurator> procurator) {
         this.procurator = procurator;
     }
