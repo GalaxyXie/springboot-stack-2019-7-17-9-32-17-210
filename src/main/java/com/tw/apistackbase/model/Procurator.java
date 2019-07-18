@@ -11,6 +11,8 @@ public class Procurator {
     private int id;
     @Column(name="procuratorate_name",nullable = false,unique = true)
     private String name;
+    private long birthday;
+    private String sex;
     public Procurator(){}
 
     public Procurator(String name) {

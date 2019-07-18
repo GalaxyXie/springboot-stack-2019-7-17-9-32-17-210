@@ -9,3 +9,15 @@ logging:
         hibernate: ERROR
 server:
   port: 8888
+spring:
+  datasource:
+    url: jdbc:h2:file:./db/court
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    database-platform: org.hibernate.dialect.H2Dialect
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
