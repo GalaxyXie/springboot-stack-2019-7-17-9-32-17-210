@@ -21,7 +21,14 @@ import java.util.List;
 public class CriminalCaseTest {
     @Autowired
     CriminalCaseRepository criminalCaseRepository;
-
+/*
+    @Test
+    public void should_return_List_of_criminal_case_size_when_add_criminal_case_is_null(){
+        CriminalCase criminalCase=new CriminalCase("AWomanHasBeenMurdered",Long.valueOf("1970010123230404"));
+        criminalCaseRepository.save(criminalCase);
+        int size=criminalCaseRepository.findAll().size();
+        Assertions.assertEquals(1,size);
+    }
     @Test
     public void should_return_List_of_criminal_case_size_when_add_criminal_case(){
         CriminalCase criminalCase=new CriminalCase("AWomanHasBeenMurdered",Long.valueOf("1970010123230404"));
@@ -29,6 +36,7 @@ public class CriminalCaseTest {
         int size=criminalCaseRepository.findAll().size();
         Assertions.assertEquals(1,size);
     }
+    /*
     @Test
     public void should_return_a_criminal_case_when_find_criminal_case_by_Id(){
         CriminalCase case1=new CriminalCase("JerryKilledJaylon",Long.valueOf("1971010123230000"));
@@ -70,16 +78,16 @@ public class CriminalCaseTest {
 
         Assertions.assertEquals(1,size);
     }
-    @Test
-    public void should_return_criminal_case_Info_when_add_criminalcaseInfo_to_criminal_case_by_Id(){
-        CriminalCase case1=new CriminalCase("JerryKilledJaylon",Long.valueOf("1970010123230000"));
-
-        criminalCaseRepository.save(case1);
-
-
-        int size=criminalCaseRepository.findAll().size();
-
-        Assertions.assertEquals(1,size);
-    }
-
+//    @Test
+//    public void should_return_criminal_case_Info_when_add_criminalcaseInfo_to_criminal_case_by_Id(){
+//        CriminalCase case1=new CriminalCase("JerryKilledJaylon",Long.valueOf("1970010123230000"));
+//
+//        criminalCaseRepository.save(case1);
+//
+//
+//        int size=criminalCaseRepository.findAll().size();
+//
+//        Assertions.assertEquals(1,size);
+//    }
+*/
 }

@@ -15,13 +15,5 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class CrinminalCaseInfoTest {
-    @Autowired
-    CriminalCaseInfoRepository criminalCaseInfoRepository;
-    @Test
-    public void should_return_criminal_caseInfo_when_find_criminal_case_by_Id(){
-        CriminalCaseInfo caseInfo=new CriminalCaseInfo("JerryKilledJaylonBecauseLove","JerryKilledJaylon");
-        criminalCaseInfoRepository.save(caseInfo);
-        CriminalCaseInfo caseInfo1=criminalCaseInfoRepository.findCriminalCaseById(1);
-        Assertions.assertEquals("JerryKilledJaylonBecauseLove",caseInfo1.getSubjectiveElements());
-    }
+
 }

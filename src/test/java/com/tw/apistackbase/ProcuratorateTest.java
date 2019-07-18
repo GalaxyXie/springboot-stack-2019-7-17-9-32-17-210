@@ -18,13 +18,5 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class ProcuratorateTest {
     @Autowired
     ProcuratorateRepository procuratorateRepository;
-    @Test
-    public void should_return_Procurate_when_find_Procurate_by_Id(){
-        Procuratorate procuratorate = new Procuratorate("Laura");
-        Procuratorate procuratorate1 = new Procuratorate("amy");
-        procuratorateRepository.save(procuratorate);
-        procuratorateRepository.save(procuratorate1);
-        Procuratorate procuratorate2=procuratorateRepository.findProcuratorateById(1);
-        Assertions.assertEquals("Laura",procuratorate.getName());
-    }
+
 }

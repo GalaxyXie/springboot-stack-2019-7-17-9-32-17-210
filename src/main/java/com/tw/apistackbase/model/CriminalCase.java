@@ -1,5 +1,6 @@
 package com.tw.apistackbase.model;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Columns;
 
 import javax.persistence.*;
@@ -13,8 +14,7 @@ public class CriminalCase {
     private String name;
     @Column(name="criminal_date",nullable = false)
     private long date;
-    @OneToOne
-    @Column(name="criminalInfo",nullable = false)
+    @OneToOne(cascade = CascadeType.ALL)
     private CriminalCaseInfo criminalCaseInfo;
 
     public CriminalCase(String name, long date, CriminalCaseInfo criminalCaseInfo, Procuratorate procuratorate) {
