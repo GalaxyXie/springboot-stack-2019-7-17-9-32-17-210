@@ -1,0 +1,1 @@
+delete  from procurator where procuratorate_name='王五';
